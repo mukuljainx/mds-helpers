@@ -11,7 +11,7 @@ const { configure } = ReactTestingLibrary;
 
 configure({ testIdAttribute: 'data-test' });
 
-jest.mock('@/utils/uidGenerator', () => () => ('Test-uid'));
+// jest.mock('@/src/uidGenerator', () => () => ('Test-uid'));
 
 document.createRange = () => ({
   setStart: () => {},
