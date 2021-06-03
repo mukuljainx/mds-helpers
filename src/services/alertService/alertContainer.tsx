@@ -37,7 +37,6 @@ const AlertContainer = (props: AlertContainerProps) => {
         calcTop = -prevTop;
       } catch (error) {
         calcTop = -20;
-        console.error(error);
       }
     } else {
       calcTop = -120;
@@ -97,7 +96,9 @@ const AlertContainer = (props: AlertContainerProps) => {
   React.useEffect(() => {
     if (!enterFlag && pendingToasts.length) {
       const newToast = pendingToasts.shift();
-      newToast ? setTimeout(() => addToast(newToast), 900) : null;
+      if (newToast) {
+        setTimeout(() => addToast(newToast), 900);
+      }
     }
   }, [alerts]);
 
