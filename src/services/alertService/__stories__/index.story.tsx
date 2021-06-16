@@ -19,14 +19,13 @@ export const Simple = () => {
           onClick: () => alert('example')
         }
       ]
-    }
+    };
     alertService.add(toast);
-  }
+  };
 
   return (
     <>
-      <Button
-        onClick={clickHandler}>
+      <Button onClick={clickHandler}>
         Add toast
       </Button>
     </>
@@ -38,10 +37,8 @@ export default {
   component: AlertService
 };
 
-
 const newAlert = new AlertService();
-const throttleFunc = throttle(3500, (conf) => {
-  console.log('conf:', conf);
+const throttleFunc = throttle(3500, conf => {
   newAlert.add(JSON.parse(conf));
 });
 const addT = (conf: string) => {
@@ -80,14 +77,13 @@ export const Config = () => {
           />
 
           <Text>
-           {`AlertService.add({ title: 'test', appearance: 'info', message: 'test message' })`}
+           {"AlertService.add({ title: 'test', appearance: 'info', message: 'test message' })"}
           </Text>
 
           <br />
         </div>
         <div className="Row m-auto justify-content-center w-50">
-          <Button
-            onClick={() => addT(conf)}>
+          <Button onClick={() => addT(conf)}>
             Add toast
           </Button>
         </div>

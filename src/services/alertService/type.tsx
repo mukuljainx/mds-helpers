@@ -8,4 +8,3 @@ export interface AlertServiceToastProps extends ToastProps {
   toastClassName: string;
   autoHiderBar: autoHiderBarProp;
 }
-
