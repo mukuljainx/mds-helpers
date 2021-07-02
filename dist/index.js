@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1624950693695 
+   * Generated on: 1625228123897 
    *      Package: @innovaccer/helpers
-   *      Version: v1.0.1-0
+   *      Version: v1.0.1-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/mds-helpers
    */
@@ -67,7 +67,7 @@
     }
   }
 
-  var css_248z = "@keyframes SlideLeft {\n  0% {\n    transform: translateX(0%);\n    opacity: 1;\n  }\n  100% {\n    transform: translateX(-120%);\n    opacity: 0;\n  }\n}\n\n@keyframes SlideDown {\n  0% {\n    transform: translateY(0%);\n  }\n  100% {\n    transform: translateY(105%);\n  }\n}\n\n@keyframes SlideUp {\n  0% {\n    transform: translateY(0%);\n  }\n  100% {\n    transform: translateY(-110%);\n  }\n} \n\n.alertService {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n.alertService.exit {\n  animation: SlideLeft 0.8s;\n  animation-fill-mode: forwards;\n}\n\n.alertService.slidedown{\n  animation: SlideDown 0.8s;\n  animation-fill-mode: forwards;\n}\n\n.alertService.slideup{\n  animation: SlideUp 0.8s;\n  animation-delay: 0.5s;\n  animation-fill-mode: forwards;\n}\n\n.alertService-enter {\n  opacity: 0;\n  transform: translateX(-100%);\n}\n\n.alertService-enter.alertService-enter-active {\n  opacity: 1;\n  transform: translateX(0%);\n  transition: opacity 800ms ease-in, transform 800ms ease-in;\n}\n\n.alertService-leave {\n  opacity: 1;\n  transform: translateX(0%);\n}\n\n.alertService-leave.alertService-leave-active {\n  opacity: 0;\n  transform: translateX(-100%);\n  transition: opacity 800ms ease-out, transform 800ms ease-out;\n}\n";
+  var css_248z = "@keyframes SlideLeft {\n  0% {\n    transform: translateX(0%);\n    opacity: 1;\n  }\n  100% {\n    transform: translateX(-120%);\n    opacity: 0;\n  }\n}\n\n@keyframes SlideDown {\n  0% {\n    transform: translateY(0%);\n  }\n  100% {\n    transform: translateY(110%);\n  }\n}\n\n@keyframes SlideUp {\n  0% {\n    transform: translateY(0%);\n  }\n  100% {\n    transform: translateY(-115%);\n  }\n} \n\n.alertService.exit {\n  animation: SlideLeft 800ms;\n  animation-fill-mode: forwards;\n}\n\n.alertService.slidedown{\n  animation: SlideDown 800ms;\n  animation-fill-mode: forwards;\n}\n\n.alertService.slideup{\n  animation: SlideUp 800ms;\n  animation-delay: 0.5s;\n  animation-fill-mode: forwards;\n}\n\n.alertService-enter {\n  opacity: 0;\n  transform: translateX(-100%);\n}\n\n.alertService-enter.alertService-enter-active {\n  opacity: 1;\n  transform: translateX(0%);\n  transition: opacity 800ms ease-in, transform 800ms ease-in;\n}\n\n.alertService {\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\n  border-radius: 8px;\n  overflow: hidden;\n  transition: all 800ms ease;\n}";
   styleInject(css_248z);
 
   /*! *****************************************************************************
@@ -2424,7 +2424,7 @@
       id: wrapId,
       onMouseEnter: handlePauseTimer,
       onMouseLeave: handleStartTimer,
-      className: wrapClassName + " Toast--" + appearance + " " + (addingNew ? 'slidedown' : '') + " " + (exit ? 'exit' : '') + " " + (removingNew && indexNumber !== 0 ? 'slideup' : ''),
+      className: wrapClassName + " Toast--" + appearance + "\n      " + (addingNew ? 'slidedown' : '') + "\n      " + (exit ? 'exit' : '') + "\n      " + (removingNew && indexNumber === 1 ? 'slideup' : ''),
       style: toastStyle
     }, /*#__PURE__*/React__namespace.createElement(designSystem.Toast, __assign({}, alert, {
       onClose: handleCloseToast,
@@ -2477,7 +2477,6 @@
           calcTop = -prevTop;
         } catch (error) {
           calcTop = -20;
-          console.error(error);
         }
       } else {
         calcTop = -120;
@@ -2535,9 +2534,12 @@
     React__namespace.useEffect(function () {
       if (!enterFlag && pendingToasts.length) {
         var newToast_1 = pendingToasts.shift();
-        newToast_1 ? setTimeout(function () {
-          return addToast(newToast_1);
-        }, 900) : null;
+
+        if (newToast_1) {
+          setTimeout(function () {
+            return addToast(newToast_1);
+          }, 900);
+        }
       }
     }, [alerts]);
 
@@ -2559,7 +2561,7 @@
       style: {
         height: '3px',
         borderRadius: '5px',
-        backgroundColor: "rgb(0,0,0,35%)"
+        backgroundColor: 'rgb(0,0,0,35%)'
       }
     },
     position: 'left',
