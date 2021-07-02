@@ -9,7 +9,7 @@ const defaultConf = {
     style: {
       height: '3px',
       borderRadius: '5px',
-      backgroundColor: `rgb(0,0,0,35%)`
+      backgroundColor: 'rgb(0,0,0,35%)'
     }
   },
   position: 'left',
@@ -42,24 +42,24 @@ export class AlertService {
   }
 
   renderAlert = (config: AlertServiceConfig) => {
-    let fullConf = { ...this.config, ...config };
+    const fullConf = { ...this.config, ...config };
     this.removeAlertService();
     this.elem.setAttribute('id', 'alertService-container');
     document.body.appendChild(this.elem);
     ReactDOM.render(<AlertContainer pubSubService={this.pubSubService} defaultConfig={fullConf} />, this.elem);
-  };
+  }
 
   removeAlertService = () => {
     const removed = ReactDOM.unmountComponentAtNode(this.elem);
     return removed;
-  };
+  }
 
   remove = (toastId: string) => this.pubSubService.publish('remove-toast', toastId);
 
   add = (toast: AlertServiceToastProps) => {
     const toastId = this.pubSubService.publish('add-toast', toast);
     return toastId;
-  };
+  }
 }
 
 export default AlertService;

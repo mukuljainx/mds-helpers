@@ -95,9 +95,10 @@ const AlertComponent = (props: AlertProps) => {
       id={wrapId}
       onMouseEnter={handlePauseTimer}
       onMouseLeave={handleStartTimer}
-      className={`${wrapClassName} Toast--${appearance} ${addingNew ? 'slidedown' : ''} ${exit ? 'exit' : ''} ${
-        removingNew && indexNumber !== 0 ? 'slideup' : ''
-      }`}
+      className={`${wrapClassName} Toast--${appearance}
+      ${addingNew ? 'slidedown' : ''}
+      ${exit ? 'exit' : ''}
+      ${removingNew && indexNumber === 1 ? 'slideup' : ''}`}
       style={toastStyle}
     >
       <Toast {...alert} onClose={handleCloseToast} data-test={wrapId} className={toastClassName} />

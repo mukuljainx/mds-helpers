@@ -17,7 +17,7 @@ const config = {
   verbose: true,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
-    '!src/utils/**',
+    'src/utils/**',
     '!**/dist/**/*',
     '!**/__stories__/**/*',
     '!**/*.story.tsx',
