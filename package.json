@@ -76,6 +76,7 @@
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-postcss": "^4.0.0",
+    "postcss": "^8.3.0",
     "storybook-chromatic": "^3.5.5",
     "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
@@ -89,7 +90,6 @@
     "typescript-transform-paths": "^1.1.14"
   },
   "dependencies": {
-    "postcss": "^8.3.0",
     "react-addons-css-transition-group": "^15.6.2"
   },
   "peerDependencies": {
