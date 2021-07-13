@@ -1,8 +1,6 @@
 
 -------------------
- **v1.0.1-1**  (2021-07-02) 
+ **v1.0.1-2**  (2021-07-13) 
 
-* 4e506fc v1.0.1-1
-* 76faaa5 fix: lint, tests, different height div
-* d93f5d9 fix: tests
-* decc33d fix: linting
+* 1b316bd v1.0.1-2
+* 9ebcdab chore: moved postcss to dev

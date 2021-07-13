@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1625228123897 
+   * Generated on: 1626167489335 
    *      Package: @innovaccer/helpers
-   *      Version: v1.0.1-1
+   *      Version: v1.0.1-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/mds-helpers
    */
