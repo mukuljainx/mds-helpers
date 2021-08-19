@@ -31,20 +31,27 @@ export interface PubSubServiceProps {
 }
 
 export class AlertService {
-  elem: HTMLElement;
+  elem!: HTMLElement;
   pubSubService: PubSubServiceProps;
   config: AlertServiceConfig;
   constructor(config = {}) {
-    this.elem = document.createElement('div');
+   // create toast container
+    this.createDivContainer();
     this.pubSubService = pubSub();
     this.config = { ...defaultConf, ...config };
     this.renderAlert(this.config);
   }
 
+  createDivContainer = () => {
+    this.elem = document.createElement('div');
+    this.elem.setAttribute('id', 'alertService-container');
+    this.elem.style.position = 'relative';
+    this.elem.style.zIndex = '2147483647';
+  }
+
   renderAlert = (config: AlertServiceConfig) => {
     const fullConf = { ...this.config, ...config };
     this.removeAlertService();
-    this.elem.setAttribute('id', 'alertService-container');
     document.body.appendChild(this.elem);
     ReactDOM.render(<AlertContainer pubSubService={this.pubSubService} defaultConfig={fullConf} />, this.elem);
   }
