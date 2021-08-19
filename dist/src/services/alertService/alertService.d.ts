@@ -15,6 +15,7 @@ export declare class AlertService {
     pubSubService: PubSubServiceProps;
     config: AlertServiceConfig;
     constructor(config?: {});
+    createDivContainer: () => void;
     renderAlert: (config: AlertServiceConfig) => void;
     removeAlertService: () => boolean;
     remove: (toastId: string) => any;

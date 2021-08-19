@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1626167489335 
+   * Generated on: 1629362342524 
    *      Package: @innovaccer/helpers
-   *      Version: v1.0.1-2
+   *      Version: v1.0.1-3
    *      License: MIT
    *         Docs: https://innovaccer.github.io/mds-helpers
    */
@@ -2578,12 +2578,19 @@
         config = {};
       }
 
+      this.createDivContainer = function () {
+        _this.elem = document.createElement('div');
+
+        _this.elem.setAttribute('id', 'alertService-container');
+
+        _this.elem.style.position = 'relative';
+        _this.elem.style.zIndex = '2147483647';
+      };
+
       this.renderAlert = function (config) {
         var fullConf = __assign(__assign({}, _this.config), config);
 
         _this.removeAlertService();
-
-        _this.elem.setAttribute('id', 'alertService-container');
 
         document.body.appendChild(_this.elem);
         ReactDOM__default['default'].render( /*#__PURE__*/React__namespace.createElement(AlertContainer, {
@@ -2607,7 +2614,7 @@
         return toastId;
       };
 
-      this.elem = document.createElement('div');
+      this.createDivContainer();
       this.pubSubService = pubSub();
       this.config = __assign(__assign({}, defaultConf), config);
       this.renderAlert(this.config);
